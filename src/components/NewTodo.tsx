@@ -2,16 +2,16 @@
 import { FC, FormEvent, useRef } from 'react';
 
 interface Props {
-  handleNewTodo: (a: string) => void;
+  onAddTodo: (a: string) => void;
 }
 
-const NewTodo: FC<Props> = ({ handleNewTodo }) => {
+const NewTodo: FC<Props> = ({ onAddTodo }) => {
   const textInputRef = useRef<HTMLInputElement>(null);
 
   const todoSubmitHandler = (event: FormEvent) => {
     event.preventDefault();
     const enteredText = textInputRef.current!.value;
-    handleNewTodo(enteredText);
+    onAddTodo(enteredText);
     textInputRef.current!.value = '';
   };
 
