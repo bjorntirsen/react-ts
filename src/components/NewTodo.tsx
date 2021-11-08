@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { FC, FormEvent, useRef } from 'react';
+import './NewTodo.css'
 
 interface Props {
   onAddTodo: (a: string) => void;
@@ -17,7 +18,7 @@ const NewTodo: FC<Props> = ({ onAddTodo }) => {
 
   return (
     <form onSubmit={todoSubmitHandler}>
-      <div>
+      <div className="form-control">
         <label htmlFor='todo-text'>Todo Text</label>
         <input type='text' id='todo-text' ref={textInputRef} />
       </div>
